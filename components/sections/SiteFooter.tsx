@@ -4,6 +4,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useRef } from 'react';
 import { useLang } from '@/lib/lang';
 import en from '@/messages/en.json';
@@ -114,10 +115,10 @@ export function SiteFooter() {
             <div className="md:col-span-3">
               <p className="eyebrow mb-3">{t.contact.label}</p>
               <a
-                href="mailto:hello@khtain.com"
+                href="mailto:cool@khtain.com"
                 className="block text-bone hover:text-ember transition-colors text-body-lg"
               >
-                hello@khtain.com
+                cool@khtain.com
               </a>
               <a
                 href="https://ai.khtain.com"
@@ -130,6 +131,13 @@ export function SiteFooter() {
               <p className="block mt-2 text-slate text-body-lg">
                 labs.khtain.com <span className="font-mono text-mono-xs">— soon</span>
               </p>
+              <Link
+                href="/contact"
+                className="block mt-4 font-mono text-slate hover:text-ember transition-colors"
+                style={{ fontSize: '13px', letterSpacing: '0.06em' }}
+              >
+                More ways to reach us →
+              </Link>
             </div>
           </div>
         </div>

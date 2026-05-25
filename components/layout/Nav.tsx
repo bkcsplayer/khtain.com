@@ -47,6 +47,13 @@ export function Nav() {
           >
             {t.about}
           </Link>
+          <Link
+            href="/contact"
+            className="font-mono text-bone hover:text-ember transition-colors"
+            style={{ fontSize: '13px', letterSpacing: '0.08em' }}
+          >
+            {t.contact}
+          </Link>
           <a
             href="https://ai.khtain.com"
             target="_blank"

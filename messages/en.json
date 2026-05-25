@@ -62,6 +62,40 @@
       "label": "CONTACT"
     }
   },
+  "contact": {
+    "eyebrow": "CONTACT",
+    "headline": "Pick the right door.",
+    "doors": [
+      {
+        "num": "01",
+        "title": "For clients",
+        "desc": "If your business needs to be found, cited, and recommended by AI — start at ai.khtain.com.",
+        "href": "https://ai.khtain.com",
+        "linkLabel": "ai.khtain.com →"
+      },
+      {
+        "num": "02",
+        "title": "Partnerships & investment",
+        "desc": "For strategic partners, investors, and press. Reach Cool Bao directly at the parent company.",
+        "href": "mailto:cool@khtain.com?subject=Partnership",
+        "linkLabel": "cool@khtain.com"
+      },
+      {
+        "num": "03",
+        "title": "Press & media",
+        "desc": "Media inquiries, speaking engagements, and public information. Direct line to Cool Bao at the Calgary office.",
+        "href": "mailto:cool@khtain.com?subject=Press",
+        "linkLabel": "cool@khtain.com"
+      },
+      {
+        "num": "04",
+        "title": "Careers",
+        "desc": "Khtain is not hiring openly in 2026. But we keep a short list. If you're exceptional, reach out to Cool Bao.",
+        "href": "mailto:cool@khtain.com?subject=Careers",
+        "linkLabel": "cool@khtain.com"
+      }
+    ]
+  },
   "about": {
     "eyebrow": "ABOUT",
     "headline": "Why Khtain exists.",

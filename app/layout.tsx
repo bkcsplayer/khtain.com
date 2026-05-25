@@ -148,7 +148,7 @@ const orgSchema = {
       addressCountry: 'CA',
     },
   },
-  email: 'hello@khtain.com',
+  email: 'cool@khtain.com',
   sameAs: ['https://ai.khtain.com', 'https://labs.khtain.com'],
   knowsAbout: [
     'AI Search Visibility',
