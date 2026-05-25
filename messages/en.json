@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "KHTAIN BLOCK TECHNOLOGY LTD. — CALGARY, AB",
+    "headline": "The basis under what comes next.",
+    "subhead": "Khtain is the parent company behind two divisions: AI Search Visibility for businesses that need to be found by AI, and Labs for what's beyond.",
+    "ctaAi": "ai.khtain.com",
+    "ctaLabs": "labs.khtain.com"
+  },
+  "wordmark": {
+    "definition": "( noun, proper ) the foundation that holds the divisions."
+  },
+  "statement": {
+    "paragraphs": [
+      "Most companies build for the user.",
+      "Khtain builds for the layer below — the one that decides what the user sees.",
+      "That layer is changing. We help the basis hold."
+    ]
+  },
+  "divisions": {
+    "eyebrow": "DIVISIONS",
+    "cards": {
+      "ai": {
+        "eyebrow": "DIVISION 01",
+        "title": "AI Search Visibility",
+        "caption": "Help your business get found and recommended by ChatGPT, Google AI Overviews, Gemini, and Perplexity.",
+        "status": "LIVE — ai.khtain.com"
+      },
+      "labs": {
+        "eyebrow": "DIVISION 02",
+        "title": "Khtain Labs",
+        "caption": "AI + Blockchain research. The next layer down. Coming 2027.",
+        "status": "SOON — labs.khtain.com"
+      }
+    }
+  },
+  "methodology": {
+    "eyebrow": "METHODOLOGY",
+    "steps": [
+      { "num": "01", "title": "Discover", "desc": "What AI knows about you today — and what it doesn't." },
+      { "num": "02", "title": "Measure",  "desc": "A baseline of citations, mentions, and recommendation rate." },
+      { "num": "03", "title": "Diagnose", "desc": "Where the gaps are: content, schema, distribution, trust." },
+      { "num": "04", "title": "Optimize", "desc": "Implement fixes: structured data, content strategy, source authority." },
+      { "num": "05", "title": "Monitor",  "desc": "Track the lift across LLMs over weeks and quarters." }
+    ]
+  },
+  "philosophy": {
+    "eyebrow": "PHILOSOPHY",
+    "body": "Search is becoming conversation. Conversation is becoming inference. <em>The basis under it all is still language, structure, and trust.</em>"
+  },
+  "footer": {
+    "location": {
+      "label": "LOCATION",
+      "line1": "Calgary, Alberta",
+      "line2": "Canada",
+      "line3": "Khtain Block Technology Ltd. · Incorporated 2026"
+    },
+    "contact": {
+      "label": "CONTACT"
+    }
+  },
+  "about": {
+    "eyebrow": "ABOUT",
+    "headline": "Why Khtain exists.",
+    "intro": "Khtain Block Technology Ltd. is an Alberta corporation founded in 2026. The company holds two operating divisions and one research lab. It exists to make sure that as the layer between businesses and their customers changes — from search engines to language models — the businesses that have something real to offer are not lost in the translation.",
+    "origin": {
+      "eyebrow": "ORIGIN",
+      "body": "Khtain was built first to serve Futurefrontier Technology Ltd., a Calgary-based residential solar PV installer, as our first AI Search Visibility case study. Watching a real local business move from 'AI doesn't know who we are' to 'AI can describe, cite, and recommend us accurately' became the proof we needed. Now we offer the same methodology to other Calgary and Alberta businesses, and to bilingual English-Chinese companies who need to be visible in both languages of the AI conversation."
+    }
+  }
+}

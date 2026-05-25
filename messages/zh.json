@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "about": "关于",
+    "contact": "联系"
+  },
+  "hero": {
+    "eyebrow": "KHTAIN BLOCK TECHNOLOGY LTD. — 加拿大阿尔伯塔 卡尔加里",
+    "headline": "在构建之前，先有基底。",
+    "subhead": "Khtain 是两个部门的母品牌：AI Search Visibility（让企业被 AI 找到、引用、推荐），以及面向未来的 Labs（AI 与区块链研究）。",
+    "ctaAi": "ai.khtain.com",
+    "ctaLabs": "labs.khtain.com"
+  },
+  "wordmark": {
+    "definition": "（专有名词）承载子部门的基底。"
+  },
+  "statement": {
+    "paragraphs": [
+      "多数公司为用户而建。",
+      "Khtain 为更底层而建——决定用户看到什么的那一层。",
+      "那一层正在改变。我们让基底依然能够承载。"
+    ]
+  },
+  "divisions": {
+    "eyebrow": "部门",
+    "cards": {
+      "ai": {
+        "eyebrow": "部门 01",
+        "title": "AI 搜索能见度",
+        "caption": "让你的企业被 ChatGPT、Google AI Overviews、Gemini、Perplexity 找到、引用、推荐。",
+        "status": "已上线 — ai.khtain.com"
+      },
+      "labs": {
+        "eyebrow": "部门 02",
+        "title": "Khtain Labs",
+        "caption": "AI + 区块链 研究。下一个底层。预计 2027 年开放。",
+        "status": "即将上线 — labs.khtain.com"
+      }
+    }
+  },
+  "methodology": {
+    "eyebrow": "方法论",
+    "steps": [
+      { "num": "01", "title": "发现", "desc": "AI 今天对你了解多少——又遗漏了什么。" },
+      { "num": "02", "title": "测量", "desc": "引用、提及与推荐率的基线。" },
+      { "num": "03", "title": "诊断", "desc": "差距在哪：内容、结构化数据、分发、可信度。" },
+      { "num": "04", "title": "优化", "desc": "落地修复：结构化数据、内容策略、来源权威。" },
+      { "num": "05", "title": "监控", "desc": "跨多个 LLM 的提升追踪，按周和季度衡量。" }
+    ]
+  },
+  "philosophy": {
+    "eyebrow": "理念",
+    "body": "搜索正在变成对话。对话正在变成推理。<em>基底始终是语言、结构、与信任。</em>"
+  },
+  "footer": {
+    "location": {
+      "label": "地点",
+      "line1": "加拿大 阿尔伯塔",
+      "line2": "卡尔加里",
+      "line3": "Khtain Block Technology Ltd. · 2026 年注册"
+    },
+    "contact": {
+      "label": "联系"
+    }
+  },
+  "about": {
+    "eyebrow": "关于",
+    "headline": "Khtain 为什么存在。",
+    "intro": "Khtain Block Technology Ltd. 是一家于 2026 年在阿尔伯塔省注册的公司，旗下设有两个运营部门和一个研究实验室。我们存在的意义是：当连接企业与客户的那一层——从搜索引擎到语言模型——正在改变时，让那些真正有价值的企业不会在新的转译中被遗失。",
+    "origin": {
+      "eyebrow": "起点",
+      "body": "Khtain 最初是为了服务卡尔加里本地的住宅太阳能光伏安装公司 Futurefrontier Technology Ltd. 而建立——把它作为我们 AI Search Visibility 的第一个真实案例。看着一家本地企业从「AI 不知道我们是谁」走到「AI 能准确描述、引用、推荐我们」，成为我们需要的验证。现在我们把同样的方法论开放给其他卡尔加里与阿尔伯塔的企业，以及那些需要在 AI 对话的中英两种语言里都被看见的双语公司。"
+    }
+  }
+}

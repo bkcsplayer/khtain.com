@@ -1,26 +1,150 @@
+/* app/globals.css — base styles, Tailwind, tokens */
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Expose our tokens to Tailwind v4 so we can use bg-obsidian, text-bone, etc. */
+  --color-obsidian: #0B0B10;
+  --color-carbon:   #16161E;
+  --color-ash:      #2A2A35;
+  --color-slate:    #6B6B78;
+  --color-bone:     #EFEAE0;
+  --color-ember:    #E8602F;
+  --color-ember-dim: #B84720;
+
+  --font-display: var(--font-display);
+  --font-sans:    var(--font-sans);
+  --font-mono:    var(--font-mono);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* Import the full design token system after Tailwind */
+@import "../styles/tokens.css";
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================================
+   BASE
+   ============================================================ */
+html, body {
+  background: var(--color-obsidian);
+  color: var(--color-bone);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: var(--text-body);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-ember);
+  color: var(--color-obsidian);
+}
+
+/* Container helper */
+.container-x {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+/* Eyebrow text reusable */
+.eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: var(--text-mono-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-slate);
+}
+
+/* CJK text styling helper */
+[lang="zh"], .lang-zh {
+  font-family: var(--font-cjk-sans), 'PingFang SC', sans-serif;
+  line-height: var(--leading-cjk);
+}
+
+[lang="zh"] .font-display-cjk,
+.lang-zh .font-display-cjk {
+  font-family: var(--font-cjk-serif), 'Songti SC', serif;
+}
+
+/* Hairline divider */
+.hairline-x {
+  height: 1px;
+  background: var(--color-ash);
+  width: 100%;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--color-ember);
+  color: var(--color-obsidian);
+  padding: 14px 28px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-button);
+  transition: background var(--duration-fast) var(--ease-out-quart);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-primary:hover {
+  background: var(--color-ember-dim);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-bone);
+  border: 1px solid var(--color-ash);
+  padding: 14px 28px;
+  font-weight: 400;
+  border-radius: var(--radius-button);
+  transition: border-color var(--duration-base) var(--ease-out-quart);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-ghost:hover {
+  border-color: var(--color-bone);
+}
+
+/* Surface */
+.surface-carbon {
+  background: var(--color-carbon);
+  border: 1px solid var(--color-ash);
+  transition: border-color var(--duration-slow) var(--ease-out-expo);
+}
+
+.surface-carbon:hover {
+  border-color: var(--color-slate);
+}
+
+/* Focus ring */
+*:focus-visible {
+  outline: 2px solid var(--color-ember);
+  outline-offset: 2px;
+}
+
+/* Reduce motion respect */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hide horizontal scrollbar caused by GSAP scaled elements */
+body {
+  overflow-x: hidden;
 }

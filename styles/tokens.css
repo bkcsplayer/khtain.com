@@ -1,0 +1,151 @@
+/* tokens.css — Design tokens for khtain.com
+ * Copy this entire content into khtain-web/app/globals.css
+ * AFTER the @tailwind directives.
+ */
+
+@layer base {
+  :root {
+    /* ============================================================
+       COLOR
+       ============================================================ */
+    --color-obsidian:   #0B0B10;
+    --color-carbon:     #16161E;
+    --color-ash:        #2A2A35;
+    --color-slate:      #6B6B78;
+    --color-bone:       #EFEAE0;
+    --color-ember:      #E8602F;
+    --color-ember-dim:  #B84720;
+
+    /* RGB variants for alpha compositing */
+    --rgb-obsidian: 11 11 16;
+    --rgb-bone:     239 234 224;
+    --rgb-ember:    232 96 47;
+
+    /* ============================================================
+       TYPOGRAPHY (font-family vars set by next/font in layout.tsx)
+       ============================================================ */
+    /* --font-display, --font-sans, --font-mono, --font-cjk-serif,
+       --font-cjk-sans are injected by next/font */
+
+    /* ============================================================
+       SPACING (fluid)
+       ============================================================ */
+    --space-1: clamp(4px,   0.5vw, 6px);
+    --space-2: clamp(8px,   1vw,   12px);
+    --space-3: clamp(16px,  1.5vw, 20px);
+    --space-4: clamp(24px,  2.5vw, 32px);
+    --space-5: clamp(40px,  4vw,   56px);
+    --space-6: clamp(64px,  6vw,   96px);
+    --space-7: clamp(96px,  8vw,  144px);
+    --space-8: clamp(160px, 14vw, 240px);
+    --space-9: clamp(240px, 22vw, 380px);
+
+    /* ============================================================
+       TYPE SCALE
+       ============================================================ */
+    --text-display-xl: clamp(72px, 14vw, 220px);
+    --text-display-lg: clamp(56px, 8vw,  120px);
+    --text-display-md: clamp(40px, 5vw,   72px);
+    --text-h1: clamp(36px, 4vw, 48px);
+    --text-h2: clamp(26px, 3vw, 32px);
+    --text-h3: clamp(20px, 2vw, 22px);
+    --text-body-lg: clamp(18px, 1.5vw, 20px);
+    --text-body:    16px;
+    --text-body-sm: 14px;
+    --text-mono:    13px;
+    --text-mono-xs: 11px;
+
+    /* ============================================================
+       LINE HEIGHTS
+       ============================================================ */
+    --leading-display: 1.05;
+    --leading-tight:   1.2;
+    --leading-snug:    1.35;
+    --leading-normal:  1.5;
+    --leading-relaxed: 1.65;
+    --leading-cjk:     1.75; /* CJK needs more */
+
+    /* ============================================================
+       TRACKING
+       ============================================================ */
+    --tracking-display: -0.02em;
+    --tracking-tight:   -0.01em;
+    --tracking-normal:  0em;
+    --tracking-wide:    0.04em;
+    --tracking-eyebrow: 0.12em;
+
+    /* ============================================================
+       LAYOUT
+       ============================================================ */
+    --container-max: 1440px;
+    --container-px:  clamp(20px, 4vw, 80px);
+
+    /* ============================================================
+       MOTION CURVES
+       ============================================================ */
+    --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out:    cubic-bezier(0.65, 0, 0.35, 1);
+
+    --duration-fast:    0.2s;
+    --duration-base:    0.4s;
+    --duration-slow:    0.8s;
+    --duration-slower:  1.2s;
+
+    /* ============================================================
+       BORDERS
+       ============================================================ */
+    --hairline: 1px;
+    --radius:   0;          /* whole site uses 0 */
+    --radius-button: 2px;   /* only buttons get a slight curve */
+  }
+
+  /* Base body styling */
+  html {
+    background: var(--color-obsidian);
+    color: var(--color-bone);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--color-obsidian);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-obsidian);
+  }
+
+  /* Reset for the brand */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Utility classes that aren't trivially expressible in Tailwind */
+
+.font-display { font-family: var(--font-display), serif; font-style: italic; }
+.font-sans    { font-family: var(--font-sans), system-ui, sans-serif; }
+.font-mono    { font-family: var(--font-mono), ui-monospace, monospace; }
+.font-cjk-serif { font-family: var(--font-cjk-serif), 'Songti SC', serif; }
+.font-cjk-sans  { font-family: var(--font-cjk-sans), 'PingFang SC', sans-serif; }
+
+.text-display-xl { font-size: var(--text-display-xl); line-height: var(--leading-display); letter-spacing: var(--tracking-display); }
+.text-display-lg { font-size: var(--text-display-lg); line-height: var(--leading-display); letter-spacing: var(--tracking-display); }
+.text-display-md { font-size: var(--text-display-md); line-height: var(--leading-tight);   letter-spacing: var(--tracking-tight); }
+
+.text-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-xs);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow);
+  color: var(--color-slate);
+}
+
+/* No-radius rule reinforcement */
+button, a.btn { border-radius: var(--radius-button); }
+img, video    { border-radius: var(--radius); }
