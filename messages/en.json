@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "KHTAIN BLOCK TECHNOLOGY LTD. — CALGARY, AB",
     "headline": "The basis under what comes next.",
-    "subhead": "Khtain is the parent company behind two divisions: AI Search Visibility for businesses that need to be found by AI, and Labs for what's beyond.",
+    "subhead": "Khtain is the parent company behind two divisions: <span class=\"font-mono\">AI</span> Search Visibility for businesses that need to be found by <span class=\"font-mono\">AI</span>, and Labs for what's beyond.",
     "ctaAi": "ai.khtain.com",
     "ctaLabs": "labs.khtain.com"
   },

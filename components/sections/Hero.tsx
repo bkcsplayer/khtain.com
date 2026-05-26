@@ -2,11 +2,11 @@
 'use client';
 
 import Image from 'next/image';
-import { useRef } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import { useLang } from '@/lib/lang';
 import en from '@/messages/en.json';
 import zh from '@/messages/zh.json';
-import { useGSAP } from '@/lib/gsap';
+import { gsap, ScrollTrigger, SplitText } from '@/lib/gsap';
 import { HaloRings } from '@/components/motion/HaloRings';
 
 export function Hero() {
@@ -14,16 +14,21 @@ export function Hero() {
   const t = lang === 'zh' ? zh.hero : en.hero;
   const scope = useRef<HTMLElement>(null);
 
-  // ============================================================
-  // GSAP — see docs/MOTION.md Effect 2 "Hero Reveal"
-  // ============================================================
-  useGSAP((gsap, ScrollTrigger, SplitText) => {
+  // useLayoutEffect — fires synchronously after hydration, before paint.
+  // This prevents FOUC: SSR renders the image visible, gsap.set hides it
+  // before browser paints, then the timeline animates it in.
+  useLayoutEffect(() => {
     if (!scope.current) return;
 
     const ctx = gsap.context(() => {
-      // Reduced motion fallback
       const mm = gsap.matchMedia();
       mm.add('(prefers-reduced-motion: no-preference)', () => {
+        // Set initial states (before paint, so no flash)
+        gsap.set('[data-anim="eyebrow"]', { y: 12, opacity: 0 });
+        gsap.set('[data-anim="subhead"]', { y: 12, opacity: 0 });
+        gsap.set('[data-anim="image"]', { scale: 1.08, opacity: 0 });
+        gsap.set('[data-anim="links"] > *', { opacity: 0, y: 8 });
+
         // Headline word stagger
         const split = new SplitText('[data-anim="headline"]', { type: 'words' });
         gsap.set(split.words, { y: 24, opacity: 0 });
@@ -61,7 +66,7 @@ export function Hero() {
     }, scope);
 
     return () => ctx.revert();
-  });
+  }, []);
 
   return (
     <section
@@ -79,8 +84,7 @@ export function Hero() {
 
           <p
             data-anim="eyebrow"
-            className="eyebrow opacity-0"
-            style={{ transform: 'translateY(12px)' }}
+            className="eyebrow"
           >
             {t.eyebrow}
           </p>
@@ -101,23 +105,22 @@ export function Hero() {
 
           <p
             data-anim="subhead"
-            className="mt-8 max-w-[480px] text-slate opacity-0"
+            className="mt-8 max-w-[480px] text-slate"
             style={{
               fontSize: 'var(--text-body-lg)',
               lineHeight: lang === 'zh' ? 'var(--leading-cjk)' : 'var(--leading-relaxed)',
-              transform: 'translateY(12px)',
             }}
-          >
-            {t.subhead}
-          </p>
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: t.subhead }}
+          />
 
           <div data-anim="links" className="mt-12 flex flex-col gap-3">
             <a
               href="https://ai.khtain.com"
               target="_blank"
               rel="noopener"
-              className="opacity-0 inline-flex items-center gap-2 text-bone hover:text-ember transition-colors group"
-              style={{ transform: 'translateY(8px)', fontSize: '15px' }}
+              className="inline-flex items-center gap-2 text-bone hover:text-ember transition-colors group"
+              style={{ fontSize: '15px' }}
             >
               <span className="font-mono text-mono-xs eyebrow !text-slate group-hover:!text-ember transition-colors">
                 Division 01
@@ -126,9 +129,9 @@ export function Hero() {
               <span className="font-mono">→</span>
             </a>
             <a
-              href="mailto:hello@khtain.com?subject=Labs"
-              className="opacity-0 inline-flex items-center gap-2 text-slate hover:text-bone transition-colors group"
-              style={{ transform: 'translateY(8px)', fontSize: '15px' }}
+              href="mailto:cool@khtain.com?subject=Labs"
+              className="inline-flex items-center gap-2 text-slate hover:text-bone transition-colors group"
+              style={{ fontSize: '15px' }}
             >
               <span className="font-mono text-mono-xs eyebrow">Division 02</span>
               <span>labs.khtain.com</span>
@@ -141,8 +144,7 @@ export function Hero() {
         <div className="md:col-span-5 relative h-[60vh] md:h-[80vh] md:self-center">
           <div
             data-anim="image"
-            className="relative w-full h-full opacity-0"
-            style={{ transform: 'scale(1.08)' }}
+            className="relative w-full h-full"
           >
             <Image
               src="/images/01-hero.png"

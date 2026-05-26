@@ -6,7 +6,7 @@
   "hero": {
     "eyebrow": "KHTAIN BLOCK TECHNOLOGY LTD. — 加拿大阿尔伯塔 卡尔加里",
     "headline": "在构建之前，先有基底。",
-    "subhead": "Khtain 是两个部门的母品牌：AI Search Visibility（让企业被 AI 找到、引用、推荐），以及面向未来的 Labs（AI 与区块链研究）。",
+    "subhead": "Khtain 是两个部门的母品牌：<span class=\"font-mono\">AI</span> Search Visibility（让企业被 <span class=\"font-mono\">AI</span> 找到、引用、推荐），以及面向未来的 Labs（<span class=\"font-mono\">AI</span> 与区块链研究）。",
     "ctaAi": "ai.khtain.com",
     "ctaLabs": "labs.khtain.com"
   },
